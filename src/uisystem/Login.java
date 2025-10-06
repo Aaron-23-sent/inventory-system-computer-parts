@@ -185,6 +185,12 @@ public class Login extends javax.swing.JFrame {
              home.setLocationRelativeTo(null);
              
              
+               
+//             ComputerPartsForm computerPartsForm = new ComputerPartsForm();
+//             computerPartsForm.setVisible(true);
+//             computerPartsForm.setLocationRelativeTo(null);
+//             computerPartsForm.start();
+             
         }else {
             JOptionPane.showMessageDialog(null, "Wrong credentials");
 

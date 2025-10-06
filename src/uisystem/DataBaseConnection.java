@@ -14,7 +14,7 @@ import java.util.Scanner;
 public class DataBaseConnection {
 
     Connection conn;
-    final String mySql = "jdbc:mysql://localhost:3306/databaseconnection";
+    final String mySql = "jdbc:mysql://localhost:3306/inventorysystem";
     String dbUser = "root1", dbPassword = "";
 
     public void connect() {
@@ -61,11 +61,11 @@ public class DataBaseConnection {
     
     public ResultSet getComputerParts() {
         try {
-            String query = "SELECT * from user";
+            String query = "SELECT * from item";
             System.out.println("Query: " + query);
             Statement stmt = conn.createStatement();
             ResultSet rs = stmt.executeQuery(query);
-            conn.close();
+           
             return rs;
            
         } catch (SQLException ex) {
@@ -74,7 +74,27 @@ public class DataBaseConnection {
             return null;
         }
     }
-    
+     public void submitComputerPart(String name, int quantity, double price, 
+             String brand, String model, String last_update, String created_by) {
+        try {
+            String query = "INSERT INTO "
+                    + "item (name, quantity, price, brand, model, last_update, created_by) "
+                    + "VALUES (?, ?, ?, ?, ?, ?, ?)";
+            PreparedStatement pstmt = conn.prepareStatement(query);
+            pstmt.setString(1, name);
+            pstmt.setInt(2, quantity);
+            pstmt.setDouble(3, price);
+            pstmt.setString(4, brand);
+            pstmt.setString(5, model);
+            pstmt.setString(6, last_update);
+            pstmt.setString(7, created_by);
+            
+            pstmt.executeUpdate();
+            System.out.println("DATA INSERTED");
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+    }
     
     public void insert(String username, String password) {
         try {

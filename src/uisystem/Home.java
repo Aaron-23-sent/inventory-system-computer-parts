@@ -27,64 +27,141 @@ public class Home extends javax.swing.JFrame {
     private void initComponents() {
 
         jPanel1 = new javax.swing.JPanel();
-        jScrollPane1 = new javax.swing.JScrollPane();
-        jTable1 = new javax.swing.JTable();
+        jPanel2 = new javax.swing.JPanel();
+        useranameField = new javax.swing.JLabel();
+        jLabel2 = new javax.swing.JLabel();
+        jLabel3 = new javax.swing.JLabel();
+        addItem = new javax.swing.JButton();
+        addItem1 = new javax.swing.JButton();
+        addItem3 = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setPreferredSize(new java.awt.Dimension(1000, 600));
 
-        jTable1.setModel(new javax.swing.table.DefaultTableModel(
-            new Object [][] {
-                {null, null, null},
-                {null, null, null},
-                {null, null, null},
-                {null, null, null}
-            },
-            new String [] {
-                "ID", "Username", "Password"
-            }
-        ) {
-            Class[] types = new Class [] {
-                java.lang.Integer.class, java.lang.String.class, java.lang.String.class
-            };
+        useranameField.setFont(new java.awt.Font("Segoe UI", 1, 36)); // NOI18N
+        useranameField.setText("Aaron");
 
-            public Class getColumnClass(int columnIndex) {
-                return types [columnIndex];
+        jLabel2.setFont(new java.awt.Font("Segoe UI", 1, 36)); // NOI18N
+        jLabel2.setText("Welcome ");
+
+        jLabel3.setFont(new java.awt.Font("Sitka Banner", 1, 24)); // NOI18N
+        jLabel3.setText("Choose actions");
+
+        addItem.setBackground(new java.awt.Color(0, 0, 255));
+        addItem.setFont(new java.awt.Font("Segoe UI", 0, 36)); // NOI18N
+        addItem.setForeground(new java.awt.Color(204, 204, 204));
+        addItem.setText("DELETE ITEM");
+        addItem.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                addItemActionPerformed(evt);
             }
         });
-        jScrollPane1.setViewportView(jTable1);
+
+        addItem1.setBackground(new java.awt.Color(0, 0, 255));
+        addItem1.setFont(new java.awt.Font("Segoe UI", 0, 36)); // NOI18N
+        addItem1.setForeground(new java.awt.Color(204, 204, 204));
+        addItem1.setText("EDIT ITEM");
+        addItem1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                addItem1ActionPerformed(evt);
+            }
+        });
+
+        addItem3.setBackground(new java.awt.Color(0, 0, 255));
+        addItem3.setFont(new java.awt.Font("Segoe UI", 0, 36)); // NOI18N
+        addItem3.setForeground(new java.awt.Color(204, 204, 204));
+        addItem3.setText("ADD ITEM");
+        addItem3.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                addItem3ActionPerformed(evt);
+            }
+        });
+
+        javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
+        jPanel2.setLayout(jPanel2Layout);
+        jPanel2Layout.setHorizontalGroup(
+            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel2Layout.createSequentialGroup()
+                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel2Layout.createSequentialGroup()
+                        .addGap(354, 354, 354)
+                        .addComponent(jLabel2)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(useranameField))
+                    .addGroup(jPanel2Layout.createSequentialGroup()
+                        .addGap(419, 419, 419)
+                        .addComponent(jLabel3))
+                    .addGroup(jPanel2Layout.createSequentialGroup()
+                        .addGap(398, 398, 398)
+                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(addItem1)
+                            .addComponent(addItem3)))
+                    .addGroup(jPanel2Layout.createSequentialGroup()
+                        .addGap(374, 374, 374)
+                        .addComponent(addItem)))
+                .addContainerGap(372, Short.MAX_VALUE))
+        );
+        jPanel2Layout.setVerticalGroup(
+            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel2Layout.createSequentialGroup()
+                .addGap(83, 83, 83)
+                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(useranameField)
+                    .addComponent(jLabel2))
+                .addGap(37, 37, 37)
+                .addComponent(jLabel3)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(addItem3)
+                .addGap(18, 18, 18)
+                .addComponent(addItem1)
+                .addGap(18, 18, 18)
+                .addComponent(addItem)
+                .addContainerGap(176, Short.MAX_VALUE))
+        );
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel1Layout.createSequentialGroup()
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 523, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 15, Short.MAX_VALUE))
+            .addComponent(jPanel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 338, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap()
+                .addComponent(jPanel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addContainerGap())
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 0, Short.MAX_VALUE))
+            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 0, Short.MAX_VALUE))
+            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void addItemActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_addItemActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_addItemActionPerformed
+
+    private void addItem1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_addItem1ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_addItem1ActionPerformed
+
+    private void addItem3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_addItem3ActionPerformed
+        // TODO add your handling code here:
+        this.dispose();
+        ComputerPartsForm cp = new ComputerPartsForm();
+        cp.setVisible(true);
+        cp.start();
+    }//GEN-LAST:event_addItem3ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -121,14 +198,16 @@ public class Home extends javax.swing.JFrame {
         });
     }
 
-    public void start() {
-        
-    }
-    
+
     
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton addItem;
+    private javax.swing.JButton addItem1;
+    private javax.swing.JButton addItem3;
+    private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabel3;
     private javax.swing.JPanel jPanel1;
-    private javax.swing.JScrollPane jScrollPane1;
-    private javax.swing.JTable jTable1;
+    private javax.swing.JPanel jPanel2;
+    private javax.swing.JLabel useranameField;
     // End of variables declaration//GEN-END:variables
 }
